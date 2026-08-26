@@ -20,17 +20,11 @@ function Page() {
       <SideBar>
         <div className="dashboard-page">
           <Row>
-            <Col xl={9}>
+            <Col xl={12}>
               <div className="matches-search-wrapper">
                 <ProfileSearch />
               </div>
               <MatchesProfile />
-            </Col>
-
-            <Col xl={3}>
-              <div className="dashboard-premium-sticky">
-                <Primium />
-              </div>
             </Col>
           </Row>
         </div>

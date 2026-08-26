@@ -19,8 +19,6 @@ import {
   BookHeadphones,
 } from "lucide-react";
 
-import ProfileSearch from "./ProfileSearch";
-
 function AcountHeader() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
@@ -315,8 +313,8 @@ function AcountHeader() {
         </div>
 
         <div className="offcanvas-profile-card">
-          <div className="offcanvas-avatar">
-            <UserRound size={26} />
+          <div className="account-avatar">
+            <img src="/images/user.png" alt="" />
           </div>
 
           <div className="offcanvas-profile-info">
@@ -332,8 +330,6 @@ function AcountHeader() {
         </div>
 
         <div className="offcanvas-nav">
-          <ProfileSearch />
-
           <Link
             href="/editProfile"
             className="profile-dropdown-link"

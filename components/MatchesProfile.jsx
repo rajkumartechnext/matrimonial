@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ImagePlus } from "lucide-react";
 
@@ -10,53 +9,16 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Keyboard } from "swiper/modules";
-
 import "swiper/css";
 
 import ProfileCardFooter from "@/components/ProfileCardFooter";
 
 function MatchesProfile() {
   const router = useRouter();
+
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 767);
-    };
-
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
-
-  useEffect(() => {
-    Fancybox.bind("[data-fancybox]", {
-      animated: true,
-      showClass: "f-fadeIn",
-      hideClass: "f-fadeOut",
-      dragToClose: true,
-      Toolbar: {
-        display: {
-          left: [],
-          middle: [],
-          right: ["close"],
-        },
-      },
-      Thumbs: {
-        type: "classic",
-      },
-    });
-
-    return () => {
-      Fancybox.destroy();
-    };
-  }, []);
-
-  const profiles = [
+  const [profiles, setProfiles] = useState([
     {
       id: 1,
       name: "A Shab",
@@ -162,7 +124,47 @@ function MatchesProfile() {
         "/images/matches/no-5.jpg",
       ],
     },
-  ];
+  ]);
+
+  const [interestedProfiles, setInterestedProfiles] = useState({});
+  const [shortlistedProfiles, setShortlistedProfiles] = useState({});
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    Fancybox.bind("[data-fancybox]", {
+      animated: true,
+      showClass: "f-fadeIn",
+      hideClass: "f-fadeOut",
+      dragToClose: true,
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"],
+        },
+      },
+      Thumbs: {
+        type: "classic",
+      },
+    });
+
+    return () => {
+      Fancybox.destroy();
+    };
+  }, []);
 
   const getTagClass = (tag) => {
     switch (tag) {
@@ -181,91 +183,134 @@ function MatchesProfile() {
     }
   };
 
-  const handleCardClick = (profileId) => {
-    router.push(`/matches/${profileId}`);
+  const handleCardClick = () => {
+    router.push("/matches/profileDetails");
   };
 
-  const renderProfile = (profile) => (
-    <div
-      className="mateches-profile"
-      onClick={() => handleCardClick(profile.id)}
-      role="link"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          handleCardClick(profile.id);
-        }
-      }}
-    >
-      <img
-        className="profile-card-image"
-        src={profile.images[0]}
-        alt={profile.name}
-      />
+  const handleInterest = (profileId) => {
+    setInterestedProfiles((prev) => ({
+      ...prev,
+      [profileId]: !prev[profileId],
+    }));
+  };
 
-      <div className="details-overlay">
-        <div className="profile-card-top">
-          <div className={`tag ${getTagClass(profile.compatible)}`}>
-            {profile.compatible}
-          </div>
+  const handleShortlist = (profileId) => {
+    setShortlistedProfiles((prev) => ({
+      ...prev,
+      [profileId]: !prev[profileId],
+    }));
+  };
 
-          <div className="profile-card-top-right">
-            <div
-              className="more-images"
-              data-fancybox={`profile-${profile.id}`}
-              data-src={profile.images[0]}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-            >
-              <ImagePlus size={14} />
-              <span>{profile.images.length}</span>
+  const handleIgnore = (profileId) => {
+    setProfiles((prev) => prev.filter((profile) => profile.id !== profileId));
+
+    setInterestedProfiles((prev) => {
+      const updated = { ...prev };
+      delete updated[profileId];
+      return updated;
+    });
+
+    setShortlistedProfiles((prev) => {
+      const updated = { ...prev };
+      delete updated[profileId];
+      return updated;
+    });
+  };
+
+  const renderProfile = (profile) => {
+    const isInterested = !!interestedProfiles[profile.id];
+    const isShortlisted = !!shortlistedProfiles[profile.id];
+
+    return (
+      <div
+        className="mateches-profile"
+        onClick={handleCardClick}
+        role="link"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleCardClick();
+          }
+        }}
+      >
+        <img
+          className="profile-card-image"
+          src={profile.images[0]}
+          alt={profile.name}
+        />
+
+        <div className="details-overlay">
+          <div className="profile-card-top">
+            <div className={`tag ${getTagClass(profile.compatible)}`}>
+              {profile.compatible}
+            </div>
+
+            <div className="profile-card-top-right">
+              <div
+                className="more-images"
+                data-fancybox={`profile-${profile.id}`}
+                data-src={profile.images[0]}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+              >
+                <ImagePlus size={14} />
+                <span>{profile.images.length}</span>
+              </div>
             </div>
           </div>
+
+          <div className="profile-card-content">
+            <div className="activity">{profile.active}</div>
+
+            <div className="name">
+              {profile.name}, <span>{profile.age}</span>
+            </div>
+
+            <div className="profile-details">
+              <span>
+                {profile.height} • {profile.location} • {profile.caste}
+              </span>
+
+              <span>
+                {profile.work} • {profile.income}
+              </span>
+
+              <span>{profile.education}</span>
+            </div>
+
+            <div className="tag-badge">
+              Profile managed by <span>{profile.managedBy}</span>
+            </div>
+          </div>
+
+          <ProfileCardFooter
+            profile={profile}
+            isInterested={isInterested}
+            isShortlisted={isShortlisted}
+            onInterest={() => handleInterest(profile.id)}
+            onShortlist={() => handleShortlist(profile.id)}
+            onIgnore={() => handleIgnore(profile.id)}
+          />
         </div>
 
-        <div className="profile-card-content">
-          <div className="activity">{profile.active}</div>
-
-          <div className="name">
-            {profile.name}, <span>{profile.age}</span>
-          </div>
-
-          <div className="profile-details">
-            <span>
-              {profile.height} • {profile.location} • {profile.caste}
-            </span>
-
-            <span>
-              {profile.work} • {profile.income}
-            </span>
-
-            <span>{profile.education}</span>
-          </div>
-
-          <div className="tag-badge">
-            Profile managed by <span>{profile.managedBy}</span>
-          </div>
+        <div className="fancybox-hidden-gallery">
+          {profile.images.slice(1).map((image, index) => (
+            <a
+              key={index}
+              href={image}
+              data-fancybox={`profile-${profile.id}`}
+              data-caption={`${profile.name} - ${index + 2}`}
+            >
+              <img src={image} alt={`${profile.name} ${index + 2}`} />
+            </a>
+          ))}
         </div>
-
-        <ProfileCardFooter profile={profile} />
       </div>
-
-      <div className="fancybox-hidden-gallery">
-        {profile.images.slice(1).map((image, index) => (
-          <a
-            key={index}
-            href={image}
-            data-fancybox={`profile-${profile.id}`}
-            data-caption={`${profile.name} - ${index + 2}`}
-          >
-            <img src={image} alt={`${profile.name} ${index + 2}`} />
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+    );
+  };
 
   if (!isMobile) {
     return (
@@ -288,6 +333,10 @@ function MatchesProfile() {
         slidesPerView={1}
         spaceBetween={0}
         speed={550}
+        threshold={10}
+        resistance={true}
+        resistanceRatio={0.65}
+        grabCursor={true}
         mousewheel={{
           forceToAxis: true,
           releaseOnEdges: false,
@@ -299,10 +348,6 @@ function MatchesProfile() {
         }}
         modules={[Mousewheel, Keyboard]}
         className="matches-mobile-swiper"
-        resistance={true}
-        resistanceRatio={0.65}
-        threshold={10}
-        grabCursor={true}
       >
         {profiles.map((profile) => (
           <SwiperSlide key={profile.id} className="matches-mobile-slide">
