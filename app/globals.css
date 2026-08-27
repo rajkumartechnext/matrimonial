@@ -26,10 +26,6 @@ a {
   text-decoration: none;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
-
 .matrimony-header {
   z-index: 1000;
   background: #ffffff;
@@ -69,10 +65,6 @@ a {
   white-space: nowrap;
 }
 
-/* =========================================
-   MOBILE TOGGLE
-   ========================================= */
-
 .mobile-toggle {
   display: none;
   background: none;
@@ -91,9 +83,6 @@ a {
   color: #fff;
 }
 
-/* =========================================
-   MAIN MENU
-   ========================================= */
 
 .menu-container {
   display: flex;
@@ -158,10 +147,6 @@ a {
   transform: rotate(180deg);
 }
 
-/* =========================================
-   MEGA MENU DROPDOWN
-   ========================================= */
-
 .mega-menu-item {
   position: relative;
 }
@@ -196,10 +181,6 @@ a {
     transform: translateY(0) scale(1);
   }
 }
-
-/* =========================================
-   CATEGORY LIST - DESKTOP
-   ========================================= */
 
 .category-list {
   list-style: none;
@@ -269,9 +250,6 @@ a {
   transform: translateX(2px);
 }
 
-/* =========================================
-   DESKTOP RIGHT CATEGORY PANEL
-   ========================================= */
 
 .category-panel-wrapper {
   flex: 1;
@@ -337,22 +315,10 @@ a {
   padding-left: 14px;
 }
 
-/* =========================================
-   MOBILE CATEGORY PANEL
-   HIDDEN ON DESKTOP
-   ========================================= */
 
 .mobile-category-panel {
   display: none;
 }
-
-/* =========================================
-   SEARCH BAR
-   ========================================= */
-
-/* =========================================
-   CTA BUTTONS
-   ========================================= */
 
 .cta-item {
   padding: 0 4px;
@@ -398,9 +364,6 @@ a {
   box-shadow: 0 6px 25px rgba(233, 30, 99, 0.4);
 }
 
-/* =========================================
-   MOBILE CLOSE BUTTON
-   ========================================= */
 
 .mobile-close-btn {
   display: none;
@@ -421,9 +384,6 @@ a {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* =========================================
-   DESKTOP RESPONSIVE TWEAKS
-   ========================================= */
 
 @media (max-width: 1439px) and (min-width: 1200px) {
   .menu-link {
@@ -470,10 +430,6 @@ a {
   }
 }
 
-/* =========================================
-   TABLET & MOBILE DRAWER
-   <= 992px
-   ========================================= */
 
 @media (max-width: 992px) {
 
@@ -536,9 +492,6 @@ a {
     font-size: 16px;
   }
 
-  /* =====================================
-     SEARCH
-     ===================================== */
 
   .search-item {
     max-width: 100%;
@@ -554,9 +507,6 @@ a {
     font-size: 14px;
   }
 
-  /* =====================================
-     MEGA MENU
-     ===================================== */
 
   .mega-menu {
     position: static;
@@ -572,9 +522,7 @@ a {
     overflow: visible;
   }
 
-  /* =====================================
-     CATEGORY LIST
-     ===================================== */
+
 
   .category-list {
     width: 100%;
@@ -611,19 +559,10 @@ a {
     margin-left: auto;
   }
 
-  /* =====================================
-     IMPORTANT:
-     Hide desktop right-side panel
-     ===================================== */
 
   .category-panel-wrapper {
     display: none;
   }
-
-  /* =====================================
-     MOBILE/TABLET PANEL
-     Directly under active category
-     ===================================== */
 
   .mobile-category-panel {
     display: none;
@@ -660,9 +599,6 @@ a {
     padding: 5px 8px;
   }
 
-  /* =====================================
-     CTA
-     ===================================== */
 
   .cta-item {
     margin-top: 8px;
@@ -675,10 +611,6 @@ a {
   }
 }
 
-/* =========================================
-   SMALL TABLET / LARGE PHONE
-   <= 768px
-   ========================================= */
 
 @media (max-width: 768px) {
 
@@ -702,10 +634,6 @@ a {
   }
 }
 
-/* =========================================
-   MOBILE
-   <= 600px
-   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -770,10 +698,6 @@ a {
   }
 }
 
-/* =========================================
-   VERY SMALL PHONES
-   <= 380px
-   ========================================= */
 
 @media (max-width: 380px) {
 
@@ -827,9 +751,6 @@ a {
   }
 }
 
-/* =========================================
-   SHORT VIEWPORT HEIGHTS
-   ========================================= */
 
 @media (max-height: 480px) and (max-width: 992px) {
 
@@ -839,10 +760,6 @@ a {
   }
 }
 
-/* =========================================
-   DESKTOP RESET
-   >= 993px
-   ========================================= */
 
 @media (min-width: 993px) {
 
@@ -895,10 +812,6 @@ a {
 }
 
 
-/* ========================================
-   HERO CAROUSEL
-======================================== */
-
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -926,9 +839,6 @@ a {
   transform: scale(1.01);
 }
 
-/* ========================================
-   IMAGE OVERLAY
-======================================== */
 
 .hero-carousel .carousel-item::after {
   content: "";
@@ -981,9 +891,6 @@ a {
   pointer-events: auto;
 }
 
-/* ========================================
-   LEFT HERO CONTENT
-======================================== */
 
 .hero-left {
   position: relative;
@@ -1074,9 +981,6 @@ a {
   font-weight: 400;
 }
 
-/* ========================================
-   HERO BUTTONS
-======================================== */
 
 .hero-actions {
   display: flex;
@@ -1140,9 +1044,6 @@ a {
   background: rgba(255, 255, 255, 0.16);
 }
 
-/* ========================================
-   TRUST AREA
-======================================== */
 
 .hero-trust {
   display: flex;
@@ -1175,9 +1076,6 @@ a {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* ========================================
-   RIGHT FORM
-======================================== */
 
 .hero-right {
   position: relative;
@@ -1227,9 +1125,6 @@ a {
   line-height: 1.6;
 }
 
-/* ========================================
-   REGISTER FORM
-======================================== */
 
 .register-fields {
   display: grid;
@@ -1308,9 +1203,6 @@ a {
   box-shadow: 0 0 0 3px rgba(239, 110, 155, 0.1);
 }
 
-/* ========================================
-   MOBILE NUMBER
-======================================== */
 
 .mobile-input {
   display: flex;
@@ -1354,9 +1246,6 @@ a {
   outline: none;
 }
 
-/* ========================================
-   SEND OTP BUTTON
-======================================== */
 
 .form-register-btn {
   width: 100%;
@@ -1429,9 +1318,6 @@ a {
   flex-shrink: 0;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
 
 @media (max-width: 768px) {
 
@@ -1440,7 +1326,9 @@ a {
     margin: 20px auto 0;
     padding: 24px;
   }
-
+.overlay-banner .container, .overlay-banner .row {
+    justify-items: center !important;
+}
   .register-fields {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1456,9 +1344,6 @@ a {
 
 }
 
-/* ========================================
-   CAROUSEL INDICATORS
-======================================== */
 
 .hero-carousel .carousel-indicators {
   z-index: 20;
@@ -1492,9 +1377,6 @@ a {
   display: none !important;
 }
 
-/* ========================================
-   TABLET
-======================================== */
 
 @media (max-width: 991px) {
   .hero-carousel {
@@ -1513,10 +1395,6 @@ a {
     padding: 24px;
   }
 }
-
-/* ========================================
-   MOBILE
-======================================== */
 
 @media (max-width: 767px) {
   .hero-carousel {
@@ -1598,9 +1476,6 @@ a {
   }
 }
 
-/* ========================================
-   SMALL MOBILE
-======================================== */
 
 @media (max-width: 480px) {
   .hero-carousel {
@@ -1635,10 +1510,6 @@ a {
   }
 }
 
-
-/* ========================================
-   OTP SECTION
-======================================== */
 
 .otp-section {
   animation: otpSlideIn 0.35s ease;
@@ -1695,9 +1566,6 @@ a {
   color: #555;
 }
 
-/* ========================================
-   OTP INPUT
-======================================== */
 
 .otp-input {
   text-align: center;
@@ -4619,12 +4487,12 @@ a.account-profile svg {
 
   color: #8d8389;
 
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .offcanvas-profile-info small {
   color: #c84b6b;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -5347,7 +5215,7 @@ a.account-profile svg {
   font-size: 8px;
 }
 
-.profile-dropdown-logout {
+.primarybtn {
   color: #ffffff;
   background: #e93773;
   border: 1px solid #f0e4e7;
@@ -5364,10 +5232,15 @@ a.account-profile svg {
   display: flex;
 }
 
-.profile-dropdown-logout:hover {
+.primarybtn:hover {
   color: #ffffff;
   border-color: #c84b6b;
   background: #c84b6b;
+}
+
+.primarybtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .profile-dropdown-avatar {
@@ -6213,8 +6086,11 @@ a.account-profile svg {
   height: 42px;
   display: flex;
 }
-
 a.interest-sent-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   color: #dc3f70;
   background: #ffeef3;
   border: 1px solid #d8426f;
@@ -6223,11 +6099,27 @@ a.interest-sent-btn {
   padding: 0 12px;
   font-size: 12px;
   font-weight: 600;
-  line-height: 25px;
+  line-height: 1;
   text-decoration: none;
-  transition: all .2s;
+  transition: all 0.2s ease;
 }
 
+a.interest-sent-btn:hover {
+  color: #dc3f70;
+  background: #ffeef3;
+}
+
+a.interest-sent-btn.interest-sent-active {
+  color: #fff;
+background: #20b95a;
+    border-color: #20b95a;
+}
+
+a.interest-sent-btn.interest-sent-active:hover {
+  color: #fff;
+background: #20b95a;
+    border-color: #20b95a;
+}
 .upgrade-badge {
   color: #fff;
   letter-spacing: .8px;
@@ -6460,7 +6352,7 @@ a.interest-sent-btn {
   align-items: center;
   min-height: 22px;
   padding: 4px 10px 4px 20px;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1;
   display: inline-flex;
@@ -7166,7 +7058,201 @@ button.overlay-item.ignore:hover > svg {
     right: 8px;
   }
 }
+.profile-popup-modal .modal-content {
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
 
+.profile-popup-modal .modal-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.profile-popup-modal .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.profile-popup-modal .modal-title svg {
+  color: #dc3f70;
+}
+
+.profile-popup-modal .modal-body {
+  padding: 20px;
+}
+
+.profile-popup-modal .modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #eeeeee;
+  gap: 8px;
+}
+
+.profile-popup-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: #fff7f9;
+  border: 1px solid #ffe3ea;
+  border-radius: 10px;
+}
+
+.profile-popup-profile img {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-popup-profile strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #333;
+  font-size: 14px;
+}
+
+.profile-popup-profile span {
+  display: block;
+  color: #888;
+  font-size: 12px;
+}
+
+.profile-popup-text {
+  margin: 0 0 14px;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.profile-share-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #f8f8f8;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+}
+
+.profile-share-link span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: #777;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-share-link button {
+color: #fff;
+    background: #20b95a;
+    border-color: #20b95a;
+    border: 0;
+    border-radius: 6px;
+    flex: none;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+.mycancel {
+    color: #313131;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    min-height: 42px;
+    margin-top: 7px;
+    transition: all .2s;
+    display: flex;
+}
+
+.profile-popup-warning-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff4e5;
+  color: #d58b27;
+}
+
+.profile-popup-confirm {
+  text-align: center;
+}
+
+.profile-popup-confirm h4 {
+  margin: 0 0 7px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile-popup-confirm p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.profile-popup-modal .form-check {
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    display: flex;
+}
+
+.profile-popup-modal .form-check-label {
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .profile-popup-modal .modal-dialog {
+    margin: 12px;
+  }
+
+  .profile-popup-modal .modal-header {
+    padding: 15px;
+  }
+
+  .profile-popup-modal .modal-body {
+    padding: 16px;
+  }
+
+  .profile-popup-modal .modal-footer {
+    padding: 12px 16px;
+  }
+
+  .profile-popup-modal .modal-title {
+    font-size: 15px;
+  }
+
+  .profile-share-link {
+    padding: 7px;
+  }
+}
 
 /* profile details  */
 .user-profile-details {
@@ -7259,21 +7345,31 @@ color: #666;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
 }
 
 .user-profile-tags span {
-  padding: 8px 14px;
-  border: 1px solid #e7e7e7;
-  border-radius: 20px;
-  color: #555;
-  font-size: 12px;
-  background: #fff;
+    color: #d35d72;
+    background: #fce9ef;
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
 }
 
+.user-profile-tags span svg {
+  flex: 0 0 auto;
+  color: #d35d72;
+}
 .user-profile-detail-row {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 18px;
 }
 
 .user-profile-detail-content {
@@ -7285,14 +7381,14 @@ color: #666;
 }
 
 .user-profile-contact-card {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 8px;
-  background: #fff4f6;
-  border: 1px solid #ffe3e8;
+background: linear-gradient(145deg, #c84b6b 0%, #a93655 100%);
+    border: 1px solid #ffe3e8;
+    border-radius: 8px;
+    gap: 14px;
+    padding: 18px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
 .user-profile-contact-icon {
@@ -7308,30 +7404,16 @@ color: #666;
 }
 
 .user-profile-contact-content strong {
-  display: block;
-  margin-bottom: 5px;
-  color: #333;
-  font-size: 14px;
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
 }
 
 .user-profile-contact-content p {
-  margin: 0 0 10px;
-  color: #777;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.user-profile-contact-content button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 0;
-  background: transparent;
-  color: #d94c67;
-  padding: 0;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
+    color: #fdfdfdc9;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 .user-profile-income {
@@ -7355,17 +7437,21 @@ color: #666;
 }
 
 .user-profile-family-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 7px 11px;
-  border-radius: 20px;
-  background: #fff8ed;
-  color: #b87819;
-  font-size: 11px;
+    color: #b87819;
+    background: #fff8ed;
+    border: 1px solid #b878198f;
+    border-radius: 15px;
+    padding: 7px 11px;
+    font-size: 14px;
+    font-weight: 500;
 }
-
+.prof-sub-heading {
+    color: #e5577b;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin: 12px 0;
+}
 .user-profile-horoscope-row {
   justify-content: space-between;
 }
@@ -7375,15 +7461,15 @@ color: #666;
 }
 
 .user-profile-horoscope-private {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin: 15px 0;
-  padding: 7px 11px;
-  border: 1px solid #f2b7c1;
-  border-radius: 20px;
-  color: #d05268;
-  font-size: 11px;
+    color: #d05268;
+    border: 1px solid #f2b7c1;
+    border-radius: 20px;
+    align-items: center;
+    gap: 6px;
+    margin: 15px 0;
+    padding: 7px 11px;
+    font-size: 12px;
+    display: inline-flex;
 }
 
 .user-profile-horoscope-action strong {
@@ -7397,12 +7483,10 @@ color: #666;
   color: #888;
   font-size: 12px;
 }
-
 .user-profile-looking-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 18px;
 }
 
@@ -7410,37 +7494,69 @@ color: #666;
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 0 0 auto;
 }
 
 .user-profile-looking-person strong {
   font-size: 13px;
   color: #444;
+  white-space: nowrap;
 }
 
 .user-profile-looking-avatar {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
   border-radius: 50%;
-  background: #f4f4f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
   overflow: hidden;
 }
 
-.user-profile-heart-icon {
-  color: #df5b73;
+.user-profile-looking-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
+.user-profile-connection {
+  flex: 1;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.user-profile-connection span {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed #e2a7b5;
+}
+
+.user-profile-heart-icon {
+  flex: 0 0 auto;
+  color: #df5b73;
+  fill: #fff;
+}
+.user-profile-income span {
+    color: #e93773;
+    background: #fce9ef;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 4px 7px;
+    font-size: 12px;
+    font-weight: 500;
+}
 .user-profile-match-message {
-  padding: 12px 16px;
-  border-radius: 8px;
-  background: #f8f9fb;
-  text-align: center;
-  color: #666;
-  font-size: 12px;
-  margin-bottom: 8px;
+text-align: center;
+    color: #535050;
+    background: #f2ebee;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .user-profile-preference-list {
@@ -7453,11 +7569,11 @@ color: #666;
   gap: 15px;
   min-height: 62px;
   padding: 12px 4px;
+  justify-content: space-between;
   border-bottom: 1px solid #eeeeee;
 }
-
-.user-profile-preference-row > div {
-  flex: 1;
+.cross {
+    color: #ff2c2c;
 }
 
 .user-profile-preference-row small {
@@ -7554,6 +7670,7 @@ color: #747272;
 }
 .tag-badge-prof-det span {
     font-weight: 700;
+    color: #b63759;
 }
 .user-profile-preference-row strong {
 color: #1e1d1d;
@@ -7563,10 +7680,10 @@ color: #1e1d1d;
     display: block;
 }
 .prof-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+align-items: center;
+    gap: 4px;
     margin-bottom: 20px;
+    display: grid;
 }
 .user-profile-preference-row > svg {
   flex: 0 0 auto;
@@ -7600,7 +7717,9 @@ color: #1e1d1d;
   .user-profile-looking-header {
     gap: 8px;
   }
-
+.profile-action-dropdown button {
+    font-size: 14px;
+}
   .user-profile-looking-person {
     flex-direction: column;
     text-align: center;
@@ -7620,10 +7739,85 @@ color: #1e1d1d;
   }
 
   .user-profile-preference-row strong {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .user-profile-contact-card {
     padding: 15px;
   }
+}
+
+
+
+button.add-button {
+    background: #55555563;
+    color: #ffffff;
+    border: 1px solid #555;
+    box-shadow: 0 2px 8px #0000001f;
+    border-radius: 25px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 60%;
+}
+.edit {
+    float: inline-end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.edit-btn {
+    float: inline-end;
+}
+.edit-btn {
+    color: #bb7313;
+    background: #ffe6c5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    display: flex;
+}
+.user-profile-tags.add-more span {
+    background: #ffe6c5;
+    color: #bc7516;
+}
+.user-profile-tags.add-more span svg {
+    color: #c77c16;
+    flex: none;
+}
+.add-more-item {
+    background: #bb7313;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    display: flex;
+}
+.add-more-item svg {
+    color: #fff !important;
+}
+.modal-footer {
+    flex-wrap: nowrap !important;
+}
+.profile-modal-form label {
+    margin-top: 5px;
+}
+.tag-premium {
+    color: rgb(255, 255, 255);
+    background: #ee9b2d;
+    white-space: nowrap;
+    border-radius: 50px;
+    align-items: center;
+    min-height: 22px;
+    margin-left: -20px;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px;
 }

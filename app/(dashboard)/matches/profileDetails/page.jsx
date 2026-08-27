@@ -7,15 +7,25 @@ import {
   BriefcaseBusiness,
   GraduationCap,
   Heart,
-  Users,
   LockKeyhole,
   CalendarDays,
-  UserRound,
   Ruler,
   Church,
   Check,
-  ShieldCheck,
-  MessageCircle,
+  Pin,
+  ArrowRight,
+  X,
+  House,
+  Users,
+  WineOff,
+  Utensils,
+  CigaretteOff,
+  Music,
+  BookOpen,
+  Plane,
+  Camera,
+  CookingPot,
+  Mic2,
 } from "lucide-react";
 import AcountHeader from "@/components/AcountHeader";
 import SideBar from "@/components/SideBar";
@@ -37,7 +47,7 @@ function Page() {
                 <section className="user-profile-section">
                   <div className="prof-header">
                     <h1>A Shab Ghosh</h1>
-                    <div class="tag-badge-prof-det">
+                    <div className="tag-badge-prof-det">
                       Profile managed by <span>Self</span>
                     </div>
                   </div>
@@ -152,10 +162,9 @@ function Page() {
                         information.
                       </p>
 
-                      <button type="button">
-                        Connect Now
-                        <MessageCircle size={14} />
-                      </button>
+                      <a href="/premium" className="upgrade-btn">
+                        Upgrade Now <ArrowRight size={15} />
+                      </a>
                     </div>
                   </div>
                 </section>
@@ -178,8 +187,8 @@ function Page() {
                   </div>
 
                   <div className="user-profile-income">
-                    <span>Annual Income</span>
-                    <strong>No Income</strong>
+                    <strong>Annual Income</strong>
+                    <span>No Income</span>
                   </div>
                 </section>
 
@@ -187,6 +196,19 @@ function Page() {
                   <div className="user-profile-section-heading">
                     <h3>Family</h3>
                     <span>Family background and values</span>
+                  </div>
+
+                  <div className="user-profile-detail-row">
+                    <div className="user-profile-detail-icon">
+                      <House size={18} />
+                    </div>
+
+                    <div className="user-profile-detail-content">
+                      <strong>
+                        Upper Middle Nuclear Family from Durgapur, West Bengal
+                      </strong>
+                      <span>Moderate values • kashyap Gotra</span>
+                    </div>
                   </div>
 
                   <div className="user-profile-detail-row">
@@ -203,15 +225,98 @@ function Page() {
                   </div>
 
                   <div className="user-profile-family-badge">
-                    <ShieldCheck size={14} />
-                    Family values are important
+                    <strong>About Family : </strong>I belong to an
+                    upper-middle-class family, and family will always be my
+                    greatest priority.I belong to an upper-middle-class family,
+                    and family will always be my greatest priority.
+                  </div>
+
+                  <div className="user-profile-tags mt-3">
+                    <span>
+                      <Pin size={17} /> Living with parents
+                    </span>
                   </div>
                 </section>
 
                 <section className="user-profile-section">
                   <div className="user-profile-section-heading">
-                    <h3>Horoscope</h3>
-                    <span>Astrological information</span>
+                    <h3>Lifestyle and Interests</h3>
+                  </div>
+
+                  <div className="prof-sub-heading">Her Habits</div>
+
+                  <div className="user-profile-tags">
+                    <span>
+                      <WineOff size={17} />
+                      She does not drink
+                    </span>
+
+                    <span>
+                      <Utensils size={17} />
+                      She is a non vegetarian
+                    </span>
+
+                    <span>
+                      <CigaretteOff size={17} />
+                      She does not smoke
+                    </span>
+                  </div>
+
+                  <div className="prof-sub-heading">Her Assets</div>
+
+                  <div className="user-profile-tags">
+                    <span>Owns a house</span>
+                    <span>Owns a Car</span>
+                  </div>
+                </section>
+
+                <section className="user-profile-section">
+                  <div className="user-profile-section-heading">
+                    <h3>Her Favourites</h3>
+                    <span>Things she enjoys in her free time</span>
+                  </div>
+
+                  <div className="user-profile-tags">
+                    <span>
+                      <Music size={17} />
+                      Listening to Music
+                    </span>
+
+                    <span>
+                      <BookOpen size={17} />
+                      Reading Books
+                    </span>
+
+                    <span>
+                      <Plane size={17} />
+                      Travelling
+                    </span>
+
+                    <span>
+                      <Camera size={17} />
+                      Photography
+                    </span>
+
+                    <span>
+                      <CookingPot size={17} />
+                      Cooking
+                    </span>
+
+                    <span>
+                      <Mic2 size={17} />
+                      Singing
+                    </span>
+
+                    <span>
+                      <Users size={17} />
+                      Spending Time with Family
+                    </span>
+                  </div>
+                </section>
+
+                <section className="user-profile-section">
+                  <div className="user-profile-section-heading">
+                    <h3>Birth Date</h3>
                   </div>
 
                   <div className="user-profile-detail-row user-profile-horoscope-row">
@@ -221,13 +326,10 @@ function Page() {
 
                     <div className="user-profile-detail-content">
                       <strong>12 September, 1999</strong>
-                      <span>Birth Date</span>
                     </div>
-
-                    <LockKeyhole size={16} />
                   </div>
 
-                  <div className="user-profile-horoscope-private">
+                  {/* <div className="user-profile-horoscope-private">
                     <LockKeyhole size={14} />
                     Horoscope details are private
                   </div>
@@ -235,7 +337,7 @@ function Page() {
                   <div className="user-profile-horoscope-action">
                     <strong>Contact Horoscope</strong>
                     <span>Ask her to share horoscope details with you.</span>
-                  </div>
+                  </div> */}
                 </section>
 
                 <section className="user-profile-section">
@@ -247,23 +349,27 @@ function Page() {
                   <div className="user-profile-looking-header">
                     <div className="user-profile-looking-person">
                       <div className="user-profile-looking-avatar">
-                        <UserRound size={22} />
+                        <img src="/images/matches/no-1.jpg" alt="" />
                       </div>
                       <strong>Her Preferences</strong>
                     </div>
 
-                    <Heart size={20} className="user-profile-heart-icon" />
+                    <div className="user-profile-connection">
+                      <span></span>
+                      <Heart size={18} className="user-profile-heart-icon" />
+                      <span></span>
+                    </div>
 
                     <div className="user-profile-looking-person">
                       <div className="user-profile-looking-avatar">
-                        <UserRound size={22} />
+                        <img src="/images/matches/no-6.jpg" alt="" />
                       </div>
                       <strong>Your Profile</strong>
                     </div>
                   </div>
 
                   <div className="user-profile-match-message">
-                    You may be a good match based on her preferences
+                    You match 6/11 of her preference
                   </div>
 
                   <div className="user-profile-preference-list">
@@ -280,7 +386,9 @@ function Page() {
                         <small>Height</small>
                         <strong>5ft 4in and above</strong>
                       </div>
-                      <Check size={18} />
+                      <div className="cross">
+                        <X size={18} />
+                      </div>
                     </div>
 
                     <div className="user-profile-preference-row">
@@ -296,7 +404,9 @@ function Page() {
                         <small>Religion</small>
                         <strong>Hindu</strong>
                       </div>
-                      <Check size={18} />
+                      <div className="cross">
+                        <X size={18} />
+                      </div>
                     </div>
 
                     <div className="user-profile-preference-row">
@@ -322,7 +432,9 @@ function Page() {
                         <small>City</small>
                         <strong>Kolkata, Durgapur, Asansol, Bengaluru</strong>
                       </div>
-                      <Check size={18} />
+                      <div className="cross">
+                        <X size={18} />
+                      </div>
                     </div>
 
                     <div className="user-profile-preference-row">

@@ -15,6 +15,7 @@ import {
   UserPlus,
   MailPlus,
   MessageCircle,
+  MailCheck,
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,6 +24,8 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 function Page() {
+  const [interestSent, setInterestSent] = useState({});
+
   const recommendedMatches = [
     {
       id: 1,
@@ -199,15 +202,33 @@ function Page() {
 
                               <div className="d-flex gap-2">
                                 <Link
-                                  className="interest-sent-btn"
-                                  href={`/matches/${profile.id}`}
+                                  className={`interest-sent-btn ${
+                                    interestSent[profile.id]
+                                      ? "interest-sent-active"
+                                      : ""
+                                  }`}
+                                  href="#"
+                                  onClick={() => {
+                                    setInterestSent((prev) => ({
+                                      ...prev,
+                                      [profile.id]: true,
+                                    }));
+                                  }}
                                 >
-                                  Interests <MailPlus size={13} />
+                                  {interestSent[profile.id] ? (
+                                    <>
+                                      Interest Sent <MailCheck size={13} />
+                                    </>
+                                  ) : (
+                                    <>
+                                      Interests <MailPlus size={13} />
+                                    </>
+                                  )}
                                 </Link>
 
                                 <Link
                                   className="profile-view-btn"
-                                  href={`/matches/${profile.id}`}
+                                  href={`/matches/profileDetails`}
                                 >
                                   <ArrowRight size={13} />
                                 </Link>

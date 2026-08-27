@@ -356,7 +356,6 @@ function StepFormPage() {
     smoking: "",
     drinking: "",
     manglik: "",
-    horoscope: "",
     settleAbroad: "",
     preferredAge: [],
     preferredReligion: [],
@@ -661,11 +660,6 @@ function StepFormPage() {
     if (currentStep === 5) {
       if (!formData.manglik) {
         toast.error("Please select your Manglik status.");
-        return false;
-      }
-
-      if (!formData.horoscope) {
-        toast.error("Please select whether horoscope is available.");
         return false;
       }
 
@@ -1434,38 +1428,6 @@ function StepFormPage() {
                               />
 
                               <span>Don't Know</span>
-                            </label>
-                          </div>
-                        </div>
-                      </Col>
-
-                      <Col lg={6} md={6}>
-                        <div className="form-group">
-                          <label className="mt-3">Horoscope Available?</label>
-
-                          <div className="radio-group">
-                            <label className="radio-option">
-                              <input
-                                type="radio"
-                                name="horoscope"
-                                value="yes"
-                                checked={formData.horoscope === "yes"}
-                                onChange={handleInputChange}
-                              />
-
-                              <span>Yes</span>
-                            </label>
-
-                            <label className="radio-option">
-                              <input
-                                type="radio"
-                                name="horoscope"
-                                value="no"
-                                checked={formData.horoscope === "no"}
-                                onChange={handleInputChange}
-                              />
-
-                              <span>No</span>
                             </label>
                           </div>
                         </div>

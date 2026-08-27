@@ -185,7 +185,7 @@ function AcountHeader() {
                   </div>
 
                   <Link
-                    href="/editProfile"
+                    href="/profile"
                     className="profile-dropdown-link"
                     onClick={() => setProfileOpen(false)}
                   >
@@ -265,7 +265,7 @@ function AcountHeader() {
 
                   <button
                     type="button"
-                    className="profile-dropdown-logout"
+                    className="primarybtn"
                     onClick={() => {
                       setProfileOpen(false);
                     }}
@@ -331,7 +331,7 @@ function AcountHeader() {
 
         <div className="offcanvas-nav">
           <Link
-            href="/editProfile"
+            href="/profile"
             className="profile-dropdown-link"
             onClick={() => setProfileOpen(false)}
           >
@@ -388,6 +388,22 @@ function AcountHeader() {
 
             <span>
               <strong>Account & Settings</strong>
+            </span>
+
+            <ChevronRight size={16} />
+          </Link>
+
+          <Link
+            href="/accountSettings"
+            className="profile-dropdown-link"
+            onClick={() => setProfileOpen(false)}
+          >
+            <span className="dropdown-link-icon">
+              <CircleQuestionMark size={17} />
+            </span>
+
+            <span>
+              <strong>Help</strong>
             </span>
 
             <ChevronRight size={16} />
