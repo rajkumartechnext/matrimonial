@@ -11,9 +11,9 @@ import {
   MessageCircleMore,
 } from "lucide-react";
 
-function ProfileCardFooter({ profile, onIgnore }) {
-  const [interested, setInterested] = useState(false);
-  const [shortlisted, setShortlisted] = useState(false);
+function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
+  const [interested, setInterested] = useState(section === "intrest");
+  const [shortlisted, setShortlisted] = useState(section === "shortlist");
 
   const stopCardClick = (e) => {
     e.preventDefault();
@@ -40,6 +40,7 @@ function ProfileCardFooter({ profile, onIgnore }) {
 
   return (
     <div className="overlay-footer">
+      {/* Interest */}
       <button
         type="button"
         className={`overlay-item ${interested ? "is-interested" : ""}`}
@@ -48,9 +49,16 @@ function ProfileCardFooter({ profile, onIgnore }) {
       >
         {interested ? <MailCheck size={17} /> : <MailPlus size={17} />}
 
-        <span>{interested ? "Interested" : "Interest"}</span>
+        <span>
+          {section === "intrest"
+            ? "Cancel"
+            : interested
+              ? "Interested"
+              : "Interest"}
+        </span>
       </button>
 
+      {/* Shortlist */}
       <button
         type="button"
         className={`overlay-item ${shortlisted ? "is-shortlisted" : ""}`}
@@ -62,16 +70,20 @@ function ProfileCardFooter({ profile, onIgnore }) {
         <span>{shortlisted ? "Shortlisted" : "Shortlist"}</span>
       </button>
 
-      <button
-        type="button"
-        className="overlay-item ignore"
-        onClick={handleIgnore}
-      >
-        <X size={17} />
+      {/* Ignore - hidden for interest and shortlist sections */}
+      {section !== "intrest" && section !== "shortlist" && (
+        <button
+          type="button"
+          className="overlay-item ignore"
+          onClick={handleIgnore}
+        >
+          <X size={17} />
 
-        <span>Ignore</span>
-      </button>
+          <span>Ignore</span>
+        </button>
+      )}
 
+      {/* Chat */}
       <Link href="/messages" className="overlay-item" onClick={stopCardClick}>
         <MessageCircleMore size={17} />
 

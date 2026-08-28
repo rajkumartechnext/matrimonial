@@ -161,6 +161,7 @@ const ProfileImageSlider = () => {
           )}
 
           <div className="profile-menu-wrapper" ref={menuRef}>
+            <div className="profile-activity online">Online</div>
             <button
               type="button"
               className="drop-log"
