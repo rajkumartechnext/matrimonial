@@ -379,7 +379,7 @@ function Page() {
                                 </span>
                               </div>
 
-                              <div className="d-flex gap-2">
+                              <div className="d-flex gap-1">
                                 <Link
                                   className={`interest-sent-btn ${
                                     interestSent[profile.id] !== false

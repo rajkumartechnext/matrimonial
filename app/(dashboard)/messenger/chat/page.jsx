@@ -242,7 +242,7 @@ function Page() {
                     </Link>
 
                     <Link
-                      href="/call"
+                      href="/messenger/call"
                       type="button"
                       className="call"
                       aria-label="Call"

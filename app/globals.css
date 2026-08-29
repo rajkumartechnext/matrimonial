@@ -8222,7 +8222,7 @@ span.blocked {
 .messenger-user-info strong {
   display: block;
   color: #5c555b;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -8644,9 +8644,6 @@ button.block {
     flex-basis: 40px;
   }
 
-  .messenger-user-info strong {
-    font-size: 12px;
-  }
 
   .messenger-user-info span {
     font-size: 11px;
@@ -8689,10 +8686,253 @@ button.block {
   .chat-actions .call {
     width: 30px;
     height: 30px;
+    line-height: 30px;
+  }
+
+    .chat-actions .contact svg,
+  .chat-actions .call svg {
+            width: 15px;
+        height: auto;
   }
 
   .chat-body {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+
+/* calll  */
+
+.call-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.call-background {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #c84b6b 0%, #a93655 100%);
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.call-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.call-topbar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.call-back-btn,
+.call-more-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.call-back-btn:hover,
+.call-more-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.call-top-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.call-top-title span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.call-top-title small {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.call-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px 45px;
+}
+
+.call-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.call-avatar-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.call-avatar-ring {
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.035),
+    0 0 50px rgba(255, 255, 255, 0.12);
+}
+
+.call-avatar-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.call-online-dot {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  width: 22px;
+  height: 22px;
+  border: 4px solid #172554;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.call-profile h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.call-status {
+  margin: 8px 0 4px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.call-timer {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.call-controls {
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.call-control {
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: 0.2s ease;
+  border: 1px solid #f6799a;
+}
+
+.call-control span {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.call-control:hover,
+.call-control.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.end-call-btn {
+  margin-top: 45px;
+  width: 66px;
+  height: 66px;
+  border: 0;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.35);
+  transition: 0.2s ease;
+}
+
+.end-call-btn:hover {
+  transform: scale(1.06);
+  background: #dc2626;
+}
+
+@media (max-width: 767px) {
+  .call-topbar {
+    padding: 16px;
+  }
+
+  .call-back-btn,
+  .call-more-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .call-main {
+    padding: 20px 15px 30px;
+  }
+
+  .call-avatar-ring {
+    width: 125px;
+    height: 125px;
+  }
+
+  .call-profile h1 {
+    font-size: 23px;
+  }
+
+  .call-controls {
+    margin-top: 40px;
+    gap: 10px;
+  }
+
+  .end-call-btn {
+    margin-top: 35px;
   }
 }
