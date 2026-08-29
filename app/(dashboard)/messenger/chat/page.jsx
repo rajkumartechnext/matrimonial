@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Row, Col, Modal, Form } from "react-bootstrap";
 import Link from "next/link";
@@ -51,6 +51,7 @@ const profiles = {
 function Page() {
   const params = useParams();
   const router = useRouter();
+  const chatBodyRef = useRef(null);
 
   const profile = profiles[params?.id] || profiles[1];
 
@@ -62,47 +63,40 @@ function Page() {
       type: "date",
       text: "27 Aug 2026",
     },
-
     {
       id: 2,
       type: "received",
       text: "Kothai Job koro",
       time: "3:59 PM",
     },
-
     {
       id: 3,
       type: "date",
       text: "Yesterday",
     },
-
     {
       id: 4,
       type: "sent",
       text: "kolkata",
       time: "9:46 AM",
     },
-
     {
       id: 5,
       type: "sent",
       text: "hiiiiii",
       time: "4:31 PM",
     },
-
     {
       id: 6,
       type: "received",
       text: "hm",
       time: "6:34 PM",
     },
-
     {
       id: 7,
       type: "date",
       text: "Today",
     },
-
     {
       id: 8,
       type: "sent",
@@ -116,23 +110,40 @@ function Page() {
   const [reportReason, setReportReason] = useState("");
   const [interested, setInterested] = useState(false);
 
-  const handleInterest = () => {
-    setInterested((prev) => {
-      const newValue = !prev;
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTo({
+        top: chatBodyRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages]);
 
-      if (newValue) {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          {
-            id: Date.now(),
-            type: "sent",
-            text: "I’m interested in your profile.",
-            time: "Now",
-          },
-        ]);
+  const handleInterest = () => {
+    if (interested) return;
+
+    setInterested(true);
+
+    setMessages((prevMessages) => {
+      const alreadySent = prevMessages.some(
+        (item) =>
+          item.type === "sent" &&
+          item.text === "I’m interested in your profile.",
+      );
+
+      if (alreadySent) {
+        return prevMessages;
       }
 
-      return newValue;
+      return [
+        ...prevMessages,
+        {
+          id: Date.now(),
+          type: "sent",
+          text: "I’m interested in your profile.",
+          time: "Now",
+        },
+      ];
     });
   };
 
@@ -172,7 +183,6 @@ function Page() {
 
   const handleBlock = () => {
     setModalType(null);
-
     router.push("/messenger?type=acceptances");
   };
 
@@ -217,7 +227,6 @@ function Page() {
 
                     <span className="on-the-line">
                       {profile.online && <span className="online-dot"></span>}
-
                       {profile.online ? "Online" : profile.lastSeen}
                     </span>
                   </div>
@@ -258,7 +267,6 @@ function Page() {
                             className="block"
                           >
                             <Ban size={15} />
-
                             <span>Block / Ignore</span>
                           </button>
 
@@ -268,7 +276,6 @@ function Page() {
                             onClick={() => openModal("report")}
                           >
                             <Flag size={15} />
-
                             <span>Report Profile</span>
                           </button>
                         </div>
@@ -277,7 +284,7 @@ function Page() {
                   </div>
                 </div>
 
-                <div className="chat-body">
+                <div className="chat-body" ref={chatBodyRef}>
                   {messages.map((item) => {
                     if (item.type === "date") {
                       return (
@@ -327,7 +334,7 @@ function Page() {
 
                   <button
                     type="button"
-                    className={` interest-send-msg ${
+                    className={`interest-send-msg ${
                       interested ? "is-interested" : ""
                     }`}
                     onClick={handleInterest}
@@ -370,7 +377,6 @@ function Page() {
           <Modal.Header closeButton>
             <Modal.Title>
               <UserX size={19} />
-
               <span>Block / Ignore Profile</span>
             </Modal.Title>
           </Modal.Header>
@@ -400,7 +406,6 @@ function Page() {
                 onClick={handleBlock}
               >
                 <Ban size={15} />
-
                 <span>Block / Ignore</span>
               </button>
             </div>
@@ -417,7 +422,6 @@ function Page() {
           <Modal.Header closeButton>
             <Modal.Title>
               <MessageCircleWarning size={19} />
-
               <span>Report Profile</span>
             </Modal.Title>
           </Modal.Header>
@@ -492,7 +496,6 @@ function Page() {
                 onClick={handleReport}
               >
                 <Flag size={15} />
-
                 <span>Report Profile</span>
               </button>
             </div>
