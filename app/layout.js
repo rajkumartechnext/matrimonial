@@ -14,6 +14,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <Toaster position="bottom-center" reverseOrder={false} />

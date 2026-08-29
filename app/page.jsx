@@ -131,7 +131,7 @@ function Page() {
                   <div className="hero-actions">
                     <Link href="/profiles" className="hero-explore-btn">
                       <Search size={18} />
-                      Register Free
+                      Know more
                     </Link>
                   </div>
 

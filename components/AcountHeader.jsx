@@ -77,8 +77,8 @@ function AcountHeader() {
 
               {notificationOpen && (
                 <div className="notification-dropdown">
-                  <div class="notification-dropdown-top">
-                    <div class="profile-dropdown-avatar">
+                  <div className="notification-dropdown-top">
+                    <div className="profile-dropdown-avatar">
                       <Bell size={19} />
                     </div>
                     <div>
@@ -217,21 +217,6 @@ function AcountHeader() {
                   </Link>
 
                   <Link
-                    href="/phoneBook"
-                    className="profile-dropdown-link"
-                    onClick={() => setProfileOpen(false)}
-                  >
-                    <span className="dropdown-link-icon">
-                      <BookHeadphones size={17} />
-                    </span>
-
-                    <span>
-                      <strong>Phonebook</strong>
-                    </span>
-                    <ChevronRight size={16} />
-                  </Link>
-
-                  <Link
                     href="/accountSettings"
                     className="profile-dropdown-link"
                     onClick={() => setProfileOpen(false)}
@@ -359,21 +344,6 @@ function AcountHeader() {
               <strong>Partner Preferences</strong>
             </span>
 
-            <ChevronRight size={16} />
-          </Link>
-
-          <Link
-            href="/phoneBook"
-            className="profile-dropdown-link"
-            onClick={() => setProfileOpen(false)}
-          >
-            <span className="dropdown-link-icon">
-              <BookHeadphones size={17} />
-            </span>
-
-            <span>
-              <strong>Phonebook</strong>
-            </span>
             <ChevronRight size={16} />
           </Link>
 

@@ -116,7 +116,7 @@ function SideBar({ children }) {
         </Link>
 
         <Link
-          href="/messages"
+          href="/messenger"
           className={`mobile-nav-item ${isMessenger ? "active" : ""}`}
         >
           <span className="mobile-nav-icon">

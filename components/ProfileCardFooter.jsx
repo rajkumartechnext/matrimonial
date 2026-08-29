@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   MailPlus,
   MailCheck,
@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 
 function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
+  const router = useRouter();
+
   const [interested, setInterested] = useState(section === "intrest");
   const [shortlisted, setShortlisted] = useState(section === "shortlist");
 
@@ -38,9 +40,13 @@ function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
     }
   };
 
+  const handleChat = (e) => {
+    stopCardClick(e);
+    router.push("/messenger/chat");
+  };
+
   return (
     <div className="overlay-footer">
-      {/* Interest */}
       <button
         type="button"
         className={`overlay-item ${interested ? "is-interested" : ""}`}
@@ -58,7 +64,6 @@ function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
         </span>
       </button>
 
-      {/* Shortlist */}
       <button
         type="button"
         className={`overlay-item ${shortlisted ? "is-shortlisted" : ""}`}
@@ -70,7 +75,6 @@ function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
         <span>{shortlisted ? "Shortlisted" : "Shortlist"}</span>
       </button>
 
-      {/* Ignore - hidden for interest and shortlist sections */}
       {section !== "intrest" && section !== "shortlist" && (
         <button
           type="button"
@@ -78,17 +82,13 @@ function ProfileCardFooter({ profile, onIgnore, section = "match" }) {
           onClick={handleIgnore}
         >
           <X size={17} />
-
           <span>Ignore</span>
         </button>
       )}
-
-      {/* Chat */}
-      <Link href="/messages" className="overlay-item" onClick={stopCardClick}>
+      <button type="button" className="overlay-item" onClick={handleChat}>
         <MessageCircleMore size={17} />
-
         <span>Chat</span>
-      </Link>
+      </button>
     </div>
   );
 }
