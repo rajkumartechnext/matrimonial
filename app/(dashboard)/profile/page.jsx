@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 import Select from "react-select";
 import {
   MapPin,
@@ -32,6 +33,7 @@ import {
   Wallet,
   Gem,
   Baby,
+  ChevronLeft,
 } from "lucide-react";
 import Link from "next/link";
 import AcountHeader from "@/components/AcountHeader";
@@ -118,6 +120,7 @@ function Page() {
   const [modalMode, setModalMode] = useState("edit");
   const [activeSection, setActiveSection] = useState("");
   const [selectedValues, setSelectedValues] = useState([]);
+  const router = useRouter();
 
   const [lifestyleValues, setLifestyleValues] = useState({
     habits: [],
@@ -1213,6 +1216,20 @@ function Page() {
         <div className="dashboard-page profile-page">
           <Row>
             <Col xl={9} lg={8}>
+              <div className="dashboard-panel-header">
+                <button
+                  type="button"
+                  className="back"
+                  onClick={() => router.back()}
+                  aria-label="Go back"
+                >
+                  <ChevronLeft size={22} />
+                </button>
+
+                <div>
+                  <h3>Brief outline of personal information</h3>
+                </div>
+              </div>
               <ProfileSlider />
 
               <div className="user-profile-details">

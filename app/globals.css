@@ -3676,14 +3676,16 @@ section.pricing-section .container {
   margin: 0 !important;
   cursor: pointer;
   color: #767676 !important;
+      font-size: 13px;
+    font-weight: 500;
 }
 
 .radio-option input {
-  width: 17px;
-  height: 17px;
-  margin: 0;
-  accent-color: #c84b6b;
-  cursor: pointer;
+    accent-color: #c84b6b;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 0;
 }
 
 .profile-select__control {
@@ -5627,7 +5629,6 @@ a.account-profile svg {
 .dashboard-panel-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -5706,7 +5707,7 @@ a.account-profile svg {
   font-size: 12px;
   font-weight: 400;
   display: block;
-
+  width: 130px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5865,6 +5866,10 @@ a.account-profile svg {
 
   .mobile-nav-item.active {
     color: #c84b6b;
+  }
+
+  .dashboard-match-info span {
+    width: 130px;
   }
 
   .mobile-nav-icon {
@@ -6053,6 +6058,7 @@ a.interest-sent-btn.interest-sent-active {
   color: #fff;
   background: #20b95a;
   border-color: #20b95a;
+  font-size: 10px;
 }
 
 a.interest-sent-btn.interest-sent-active:hover {
@@ -7078,10 +7084,10 @@ button.overlay-item.ignore:hover>svg {
 }
 
 .profile-popup-text {
-  margin: 0 0 14px;
-  color: #777;
-  font-size: 15px;
-  line-height: 1.6;
+    color: #191919;
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .profile-share-link {
@@ -8008,8 +8014,8 @@ a.interest-sent-btn-rec {
   align-items: center;
   gap: 5px;
   height: 28px;
-  padding: 0 12px;
-  font-size: 12px;
+  padding: 0 8px;
+  font-size: 10px;
   font-weight: 600;
   line-height: 1;
   display: inline-flex;
@@ -8651,8 +8657,12 @@ button.block {
 
 
   .chat-card {
-    height: calc(100vh - 165px);
+    height: calc(100vh - 185px);
     min-height: 500px;
+    position: fixed;
+    width: 97%;
+    left: 5px;
+    right: 0;
   }
 
   .chat-body {
@@ -8689,10 +8699,10 @@ button.block {
     line-height: 30px;
   }
 
-    .chat-actions .contact svg,
+  .chat-actions .contact svg,
   .chat-actions .call svg {
-            width: 15px;
-        height: auto;
+    width: 15px;
+    height: auto;
   }
 
   .chat-body {
@@ -8722,11 +8732,9 @@ button.block {
 .call-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.08),
-    transparent 45%
-  );
+  background: radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.08),
+      transparent 45%);
   pointer-events: none;
 }
 
@@ -8837,7 +8845,7 @@ button.block {
 }
 
 .call-status {
-  margin: 8px 0 4px;
+  margin: 0px 0 4px;
   font-size: 14px;
   opacity: 0.7;
 }
@@ -8935,4 +8943,393 @@ button.block {
   .end-call-btn {
     margin-top: 35px;
   }
+}
+
+
+
+
+/* partner  */
+
+.age-range-wrapper {
+  width: 100%;
+}
+
+.age-range-wrapper h2 {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.age-range-wrapper h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7e7c7c;
+}
+
+.age-range-wrapper h3 span {
+  color: #ed3158;
+}
+
+
+.age-slider {
+  width: 100%;
+  margin-top: 4px;
+  position: relative;
+  padding-bottom: 42px;
+}
+
+.age-slider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  background: #e8edf1;
+}
+
+.age-slider-selected {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  background: #ed3158;
+}
+
+.age-range-input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  appearance: none;
+  pointer-events: none;
+}
+
+
+.age-range-input::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+}
+
+.age-range-input::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  margin-top: -10px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: #ed3158;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  appearance: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.age-range-input::-moz-range-track {
+  height: 4px;
+  background: transparent;
+}
+
+.age-range-input::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: #ed3158;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.age-range-from {
+  z-index: 3;
+}
+
+.age-range-to {
+  z-index: 2;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #c84b6b !important;
+  background-color: #fce9ef !important;
+  font-weight: 600;
+}
+
+.accordion-button {
+  font-weight: 500;
+  padding: 15px !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+
+
+
+.partner-prefarance {
+  padding: 10px 0 40px;
+}
+
+.partner-prefarance .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.partner-prefarance .accordion-item {
+  border: 1px solid #eee3e7;
+  border-radius: 14px !important;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(50, 30, 40, 0.04);
+  transition: all 0.25s ease;
+}
+
+
+.partner-prefarance .accordion-header {
+  margin: 0;
+}
+
+.partner-prefarance .accordion-button {
+  background: #fff;
+  color: #252126;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+}
+
+.partner-prefarance .accordion-button::after {
+  width: 10px;
+  height: 10px;
+  background-size: 10px;
+}
+
+.partner-prefarance .accordion-body {
+  padding: 8px 22px 26px;
+  border-top: 1px solid #f3e8eb;
+  background: #fff;
+}
+
+.partner-pref {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.pref-icon {
+  background: #fce9ef;
+  height: stretch;
+  display: flex;
+  align-items: center;
+  color: #ed3158;
+  width: 50px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: 1px solid #ffc2cf;
+  justify-content: center;
+}
+
+.partner-pref .css-v00iqf-control {
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.field {
+  width: stretch;
+}
+
+button.back {
+  background: transparent;
+  border: none;
+}
+
+button.search-btn.partner {
+  height: 40px;
+}
+
+@media (max-width: 767px) {
+  .partner-prefarance .accordion-button {
+    min-height: 58px;
+    padding: 15px 16px;
+    font-size: 15px;
+  }
+
+  .partner-search {
+    position: fixed;
+    bottom: 80px;
+    width: 97%;
+    left: 0;
+    right: 0;
+    margin: 5px;
+    z-index: 1000;
+  }
+
+  button.search-btn.partner {
+    height: 40px;
+    width: 100% !important;
+  }
+
+  .pref-icon {
+    width: 38px;
+  }
+
+  .partner-prefarance .accordion-body {
+    padding: 8px 14px 20px;
+  }
+}
+
+
+
+/* settings  */
+
+
+
+.privacy-phone {
+border-bottom: 1px solid #f1eaec;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+}
+.all-settings {
+    margin-top: 28px;
+}
+.all-settings .dashboard-panel-header p {
+    font-style: normal;
+}
+.privacy-label {
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.privacy-number {
+    color: #c84b6b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.privacy-options {
+  width: 100%;
+}
+
+.privacy-options .btn-group {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.privacy-options .privacy-toggle {
+text-align: left;
+    background: #fff;
+    align-items: flex-start;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    border: 1px solid #e5dfe1 !important;
+    border-radius: 12px !important;
+}
+
+.privacy-options .privacy-toggle:hover {
+    background: #fff9fb !important;
+    box-shadow: 0 8px 20px #c84b6b14 !important;
+    border-color: #e9a7b8 !important;
+}
+
+.privacy-options .privacy-toggle.active {
+  background: #fff5f8 !important;
+  border-color: #ed3158 !important;
+}
+
+.privacy-toggle-icon {
+    color: #c84b6b;
+    background: #fce9ef;
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+}
+
+.privacy-toggle.active .privacy-toggle-icon {
+    color: #fff;
+    background: #e75076;
+}
+
+.privacy-toggle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 18px;
+}
+
+.privacy-toggle-content strong {
+  color: #333;
+  font-size: 13px;
+}
+
+.privacy-toggle.active .privacy-toggle-content strong {
+  color: #c84b6b;
+}
+
+.privacy-radio {
+  position: absolute;
+  top: 16px;
+  right: 14px;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #d8d1d3;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.privacy-toggle.active .privacy-radio {
+  border-color: #ed3158;
+  background: #ed3158;
+  box-shadow: inset 0 0 0 4px #fff;
+}
+button.reason-delete {
+    color: #515151;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+    display: flex;
+}
+.form-check-input:focus{
+  box-shadow: none !important;
+}
+.partner-prefarance .accordion-button svg {
+    margin-right: 10px;
+}
+@media (max-width: 991px) {
+  .privacy-options .btn-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+
+
+  .privacy-number {
+    font-size: 14px;
+  }
+
 }

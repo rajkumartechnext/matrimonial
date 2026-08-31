@@ -41,8 +41,6 @@ function Login() {
       password,
     });
 
-    // Call Login API here
-
     toast.success("Login successful!");
 
     handleClose();
@@ -50,7 +48,6 @@ function Login() {
 
   return (
     <>
-      {/* Login Button */}
       <button
         type="button"
         onClick={() => setShow(true)}
@@ -60,7 +57,6 @@ function Login() {
         Login
       </button>
 
-      {/* Login Modal */}
       <Modal show={show} onHide={handleClose} centered className="login-modal">
         <Modal.Header closeButton />
 
@@ -73,8 +69,7 @@ function Login() {
               your perfect match.
             </p>
 
-            <div className="form-fields register-fields mt-4">
-              {/* Mobile Number */}
+            <div className="form-fields mt-4">
               <div className="form-group full-width">
                 <label htmlFor="loginMobile">Mobile Number</label>
 
@@ -93,8 +88,7 @@ function Login() {
                 </div>
               </div>
 
-              {/* Password */}
-              <div className="form-group full-width">
+              <div className="form-group full-width mt-4">
                 <label htmlFor="loginPassword">Password</label>
 
                 <div className="mobile-input password-input">
@@ -120,7 +114,6 @@ function Login() {
               </div>
             </div>
 
-            {/* Forgot Password */}
             <div className="text-end mt-2">
               <Link
                 href="/forgot-password"
@@ -141,14 +134,12 @@ function Login() {
               <span>→</span>
             </button>
 
-            {/* Security */}
             <div className="form-footer">
               <ShieldCheck size={15} />
 
               <span>Your information is completely secure</span>
             </div>
 
-            {/* Register */}
             <div className="login-register-text">
               Don't have an account?{" "}
               <Link href="/register" onClick={handleClose}>
