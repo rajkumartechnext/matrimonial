@@ -169,20 +169,6 @@ const Footer = () => {
                       FAQs
                     </a>
                   </li>
-
-                  <li>
-                    <a href="/safety">
-                      <ChevronRight size={14} />
-                      Safety Tips
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/report">
-                      <ChevronRight size={14} />
-                      Report Profile
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>

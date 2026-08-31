@@ -381,7 +381,7 @@ function AcountHeader() {
 
           <button
             type="button"
-            className="offcanvas-logout"
+            className="primarybtn"
             onClick={() => {
               closeMenu();
             }}
