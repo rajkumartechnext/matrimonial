@@ -648,7 +648,7 @@ function Page() {
                               </div>
                             </div>
 
-                            <div className="all-settings">
+                            <div className="all-settings pt-3">
                               <div className="privacy-phone">
                                 <span className="privacy-label">
                                   Visitor Alert Mails

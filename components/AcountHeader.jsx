@@ -392,7 +392,7 @@ function AcountHeader() {
         </div>
 
         <div className="offcanvas-footer">
-          <p>Made with ♥ for meaningful connections</p>
+          <p>Made with for meaningful connections</p>
         </div>
       </aside>
     </>

@@ -5634,7 +5634,7 @@ a.account-profile svg {
 }
 
 .dashboard-panel-header h3 {
-    margin-bottom: 2px;
+    margin-bottom: 0px;
   color: #302930;
   font-size: 17px;
   font-weight: 700;
@@ -5741,7 +5741,7 @@ a.account-profile svg {
 }
 
 
-.dashboard-activity>div {
+.dashboard-activity .dashboard-activity-icon {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
@@ -5752,13 +5752,39 @@ a.account-profile svg {
   color: #c84b6b;
   background: #fce9ef;
 }
-
+.dashboard-activity .time {
+    margin-left: auto;
+    margin-right: 0;
+}
+.dashboard-activity .time p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #909090;
+}
+.notifications-list h4 {
+    font-size: 14px;
+    margin: 17px 0;
+}
 .dashboard-activity span {
   color: #665e63;
   font-size: 13px;
   font-weight: 500;
 }
-
+.notifications-list a {
+    color: inherit;
+}
+.notification-activity-content p {
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.notification-activity-img img {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 .dashboard-activity strong {
   color: #302930;
 }
@@ -5994,7 +6020,18 @@ a.account-profile svg {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
 }
-
+span.notification-sent-btn {
+    color: #dc3f70 !important;
+    background: #ffeef3;
+    border: 1px solid #d8426f;
+    border-radius: 7px;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+}
 .dashboard-upgrade-card::after {
   content: "";
   position: absolute;
@@ -6036,7 +6073,7 @@ a.interest-sent-btn {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: #dc3f70;
+  color: #dc3f70 !important;
   background: #ffeef3;
   border: 1px solid #d8426f;
   border-radius: 25px;
@@ -9095,7 +9132,7 @@ button.block {
 
 .partner-prefarance .accordion-button {
   background: #fff;
-  color: #252126;
+  color: #4c5054;
   font-size: 15px;
   font-weight: 600;
   position: relative;

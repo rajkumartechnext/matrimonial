@@ -26,6 +26,9 @@ import {
   Cigarette,
   ChevronLeft,
   Search,
+  ContactRound,
+  BookOpenText,
+  HouseHeart,
 } from "lucide-react";
 
 const selectStyles = {
@@ -474,7 +477,9 @@ function Page() {
                 </div>
                 <Accordion defaultActiveKey="0">
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header>Basic Details</Accordion.Header>
+                    <Accordion.Header>
+                      <ContactRound size={18} /> Basic Details
+                    </Accordion.Header>
 
                     <Accordion.Body>
                       <Row>
@@ -726,7 +731,9 @@ function Page() {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header>Education & Occupation</Accordion.Header>
+                    <Accordion.Header>
+                      <GraduationCap size={18} /> Education & Occupation
+                    </Accordion.Header>
 
                     <Accordion.Body>
                       <Row>
@@ -835,12 +842,12 @@ function Page() {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="2">
-                    <Accordion.Header>Religion and Ethnicity</Accordion.Header>
+                    <Accordion.Header>
+                      <BookOpenText size={18} /> Religion and Ethnicity
+                    </Accordion.Header>
 
                     <Accordion.Body>
                       <Row>
-                        {/* Religion */}
-
                         <Col md={6}>
                           <div className="form-group">
                             <label className="mt-2 mb-1">Religion</label>
@@ -980,12 +987,12 @@ function Page() {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="3">
-                    <Accordion.Header>Lifestyle</Accordion.Header>
+                    <Accordion.Header>
+                      <HouseHeart size={18} /> Lifestyle
+                    </Accordion.Header>
 
                     <Accordion.Body>
                       <Row>
-                        {/* Drinking */}
-
                         <Col md={6}>
                           <div className="form-group">
                             <label className="mt-2 mb-1">Drinking Habits</label>

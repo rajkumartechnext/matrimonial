@@ -251,7 +251,7 @@ function Page() {
                   <Row>
                     <Col md={6} className="mb-2">
                       <div className="dashboard-activity">
-                        <div>
+                        <div className="dashboard-activity-icon">
                           <Eye size={17} />
                         </div>
 
@@ -264,7 +264,7 @@ function Page() {
 
                     <Col md={6} className="mb-2">
                       <div className="dashboard-activity">
-                        <div>
+                        <div className="dashboard-activity-icon">
                           <Heart size={17} />
                         </div>
 
@@ -277,7 +277,7 @@ function Page() {
 
                     <Col md={6} className="mb-2">
                       <div className="dashboard-activity">
-                        <div>
+                        <div className="dashboard-activity-icon">
                           <MessageCircle size={17} />
                         </div>
 
@@ -290,7 +290,7 @@ function Page() {
 
                     <Col md={6} className="mb-2">
                       <div className="dashboard-activity">
-                        <div>
+                        <div className="dashboard-activity-icon">
                           <Heart size={17} />
                         </div>
 
