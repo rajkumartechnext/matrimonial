@@ -21,6 +21,9 @@ import {
   Trash,
   ShieldKeyhole,
   LogOut,
+  Mail,
+  MessageSquareText,
+  Phone,
 } from "lucide-react";
 
 function Page() {
@@ -29,6 +32,10 @@ function Page() {
   const [profileVisibility, setProfileVisibility] = useState([1]);
   const [albumPrivacy, setAlbumPrivacy] = useState([1]);
   const [hideDuration, setHideDuration] = useState("7");
+
+  const [emailMatchAlert, setEmailMatchAlert] = useState("daily");
+  const [emailVisitorAlert, setEmailVisitorAlert] = useState("daily");
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedDeleteReason, setSelectedDeleteReason] = useState("");
   const [password, setPassword] = useState("");
@@ -439,7 +446,7 @@ function Page() {
                             onClick={() => handleDeleteReason("experience")}
                             className="reason-delete"
                           >
-                            Not satisfied with Jeevansathi experience
+                            Not satisfied with Matrimonial experience
                             <ChevronRight size={16} />
                           </button>
 
@@ -565,7 +572,354 @@ function Page() {
                       <Bell size={18} /> Notifications & Alert Manager
                     </Accordion.Header>
 
-                    <Accordion.Body></Accordion.Body>
+                    <Accordion.Body className="notification-settings">
+                      <Accordion>
+                        <Accordion.Item eventKey="4.1">
+                          <Accordion.Header>
+                            <Mail size={16} /> Email Manager
+                          </Accordion.Header>
+
+                          <Accordion.Body>
+                            <div className="all-settings mt-2">
+                              <div className="dashboard-panel-header">
+                                <div>
+                                  <h3>Email Notifications</h3>
+                                  <p>
+                                    Choose which alerts you want to receive on
+                                    your registered mail ID
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="privacy-phone">
+                                <span className="privacy-label">
+                                  Match Alert Mails
+                                </span>
+
+                                <span className="privacy-number">
+                                  (Recommended)
+                                </span>
+                              </div>
+
+                              <div className="radio-group">
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailMatchAlert"
+                                    value="daily"
+                                    checked={emailMatchAlert === "daily"}
+                                    onChange={(e) =>
+                                      setEmailMatchAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>Daily</span>
+                                </label>
+
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailMatchAlert"
+                                    value="three-times-week"
+                                    checked={
+                                      emailMatchAlert === "three-times-week"
+                                    }
+                                    onChange={(e) =>
+                                      setEmailMatchAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>3 times/week</span>
+                                </label>
+
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailMatchAlert"
+                                    value="unsubscribe"
+                                    checked={emailMatchAlert === "unsubscribe"}
+                                    onChange={(e) =>
+                                      setEmailMatchAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>Unsubscribe</span>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div className="all-settings">
+                              <div className="privacy-phone">
+                                <span className="privacy-label">
+                                  Visitor Alert Mails
+                                </span>
+
+                                <span className="privacy-number">
+                                  (Profile Visitors)
+                                </span>
+                              </div>
+
+                              <div className="radio-group">
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailVisitorAlert"
+                                    value="daily"
+                                    checked={emailVisitorAlert === "daily"}
+                                    onChange={(e) =>
+                                      setEmailVisitorAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>Daily</span>
+                                </label>
+
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailVisitorAlert"
+                                    value="days-no-login"
+                                    checked={
+                                      emailVisitorAlert === "days-no-login"
+                                    }
+                                    onChange={(e) =>
+                                      setEmailVisitorAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>Days I don't login</span>
+                                </label>
+
+                                <label className="radio-option">
+                                  <input
+                                    type="radio"
+                                    name="emailVisitorAlert"
+                                    value="unsubscribe"
+                                    checked={
+                                      emailVisitorAlert === "unsubscribe"
+                                    }
+                                    onChange={(e) =>
+                                      setEmailVisitorAlert(e.target.value)
+                                    }
+                                  />
+
+                                  <span>Unsubscribe</span>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div className="mt-4">
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>New Matches Mails</h5>
+                                  <p>
+                                    Receive mails where Matrimonial recommends
+                                    new profiles to you.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Contact Alert Mails</h5>
+                                  <p>
+                                    Receive mails when someone on Matrimonial
+                                    "Expresses Interest" in your profile.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Photo Request Mails</h5>
+                                  <p>
+                                    Receive mails when someone on Matrimonial
+                                    "Requests you to upload photo" in your
+                                    profile.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Service Mails</h5>
+                                  <p>
+                                    Receive mails (other than Visitor Alert /
+                                    Match Alert / Photo request) from
+                                    Matrimonial.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Promotional Mails</h5>
+                                  <p>
+                                    Receive promotional mails and special offers
+                                    from Matrimonial.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </Accordion.Body>
+                        </Accordion.Item>
+
+                        <Accordion.Item eventKey="4.2">
+                          <Accordion.Header>
+                            <MessageSquareText size={16} /> SMS Notifications
+                          </Accordion.Header>
+
+                          <Accordion.Body>
+                            <div className="all-settings mt-2">
+                              <div className="dashboard-panel-header">
+                                <div>
+                                  <h3>SMS Notifications</h3>
+                                  <p>
+                                    Choose which alerts you want to receive on
+                                    SMS
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Membership SMS</h5>
+                                  <p>
+                                    Receive membership information and special
+                                    offers from Matrimonial for your profile.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Transactional SMS</h5>
+                                  <p>
+                                    Receive important notifications from
+                                    Matrimonial on your profile.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </Accordion.Body>
+                        </Accordion.Item>
+
+                        <Accordion.Item eventKey="4.3">
+                          <Accordion.Header>
+                            <Phone size={16} /> Call Alerts
+                          </Accordion.Header>
+
+                          <Accordion.Body>
+                            <div className="all-settings mt-2">
+                              <div className="dashboard-panel-header">
+                                <div>
+                                  <h3>Call Alerts</h3>
+                                  <p>
+                                    Choose which alerts you want to receive on
+                                    Call
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Membership SMS</h5>
+                                  <p>
+                                    Receive membership information and special
+                                    offers from Matrimonial for your profile.
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Offer Calls</h5>
+                                  <p>
+                                    Receive calls (including AI calls) for
+                                    Special offers / discounts on Membership
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Website Help</h5>
+                                  <p>
+                                    Receive calls (including AI calls) for
+                                    Explanation of site features
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+
+                              <div className="notification-option">
+                                <div className="notification-content">
+                                  <h5>Profile Completion</h5>
+                                  <p>
+                                    Receive calls (including AI calls) which aid
+                                    in "Completion of Profile"
+                                  </p>
+                                </div>
+
+                                <label className="notification-switch">
+                                  <input type="checkbox" defaultChecked />
+                                  <span className="notification-slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+                    </Accordion.Body>
                   </Accordion.Item>
 
                   <button type="button" className="primarybtn">
