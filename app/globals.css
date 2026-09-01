@@ -5634,7 +5634,7 @@ a.account-profile svg {
 }
 
 .dashboard-panel-header h3 {
-  margin: 0;
+    margin-bottom: 2px;
   color: #302930;
   font-size: 17px;
   font-weight: 700;
@@ -9152,7 +9152,7 @@ button.search-btn.partner {
 
 @media (max-width: 767px) {
   .partner-prefarance .accordion-button {
-    min-height: 58px;
+    min-height: 48px;
     padding: 15px 16px;
     font-size: 15px;
   }
@@ -9181,6 +9181,9 @@ button.search-btn.partner {
   .partner-prefarance .accordion-body {
     padding: 8px 14px 20px;
   }
+  .all-settings {
+    margin-top: 10px;
+}
 }
 
 
@@ -9245,8 +9248,8 @@ text-align: left;
 }
 
 .privacy-options .privacy-toggle.active {
-  background: #fff5f8 !important;
-  border-color: #ed3158 !important;
+    background: #fff5f8 !important;
+    border: 1px solid #f3748e !important;
 }
 
 .privacy-toggle-icon {
@@ -9349,8 +9352,38 @@ button.reason-delete {
     margin: 0;
     border-bottom: 1px solid #ebebeb !important;
 }
+.notification-settings .accordion-body {
+    padding: 10px 0 !important;
+}
+.notification-settings .dashboard-panel-header h3 {
+    font-size: 14px;
+}
 
-
+@media (max-width: 767px) {
+  .all-settings {
+    margin-top: 10px;
+}
+.privacy-toggle-content strong {
+    font-size: 12px;
+}
+.privacy-toggle-icon {
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+}
+.privacy-radio {
+    top: 12px;
+}
+.notification-settings.accordion-body .accordion-button:not(.collapsed) {
+    padding: 0 !important;
+}
+.privacy-toggle-icon svg {
+    width: 15px;
+}
+.notification-settings.accordion-body .accordion-button {
+    padding: 15px 0 !important;
+}
+}
 /* Toggle */
 
 
