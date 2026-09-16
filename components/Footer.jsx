@@ -134,7 +134,7 @@ const Footer = () => {
                   </li>
 
                   <li>
-                    <a href="/pricing">
+                    <a href="/premium">
                       <ChevronRight size={14} />
                       Membership
                     </a>
