@@ -1,6 +1,10 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 
 import {
@@ -13,6 +17,13 @@ import {
 import { Container, Row, Col } from "react-bootstrap";
 
 function page() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -59,14 +70,14 @@ function page() {
             </div>
 
             <div className="about-story">
-              <div className="about-story-image">
+              <div className="about-story-image" data-aos="fade-right">
                 <img
                   src="/images/hero2.jpg"
                   alt="Couple building a meaningful relationship"
                 />
               </div>
 
-              <div className="about-story-content">
+              <div className="about-story-content" data-aos="fade-left">
                 <div className="experience-header">
                   <span className="experience-tag">Our Story</span>
                   <h2>
@@ -110,7 +121,7 @@ function page() {
 
               <Row className="g-4">
                 <Col lg={4} md={6}>
-                  <div className="about-value-card">
+                  <div className="about-value-card" data-aos="fade-up">
                     <div className="about-value-icon">
                       <HandHeart size={18} />
                     </div>
@@ -123,7 +134,7 @@ function page() {
                 </Col>
 
                 <Col lg={4} md={6}>
-                  <div className="about-value-card">
+                  <div className="about-value-card" data-aos="fade-up">
                     <div className="about-value-icon">
                       <ShieldLock size={18} />
                     </div>
@@ -137,7 +148,7 @@ function page() {
                 </Col>
 
                 <Col lg={4} md={6}>
-                  <div className="about-value-card">
+                  <div className="about-value-card" data-aos="fade-up">
                     <div className="about-value-icon">
                       <UserRound size={18} />
                     </div>
@@ -154,7 +165,7 @@ function page() {
             <div className="about-journey">
               <Row>
                 <Col md={3}>
-                  <div className="about-journey-img">
+                  <div className="about-journey-img" data-aos="fade-right">
                     <img src="images/about1.png" alt="" className="img-fluid" />
                   </div>
                 </Col>
@@ -236,7 +247,7 @@ function page() {
                   </Link>
                 </Col>
                 <Col md={4}>
-                  <div className="about-cta-img">
+                  <div className="about-cta-img" data-aos="fade-left">
                     <img src="images/about.png" alt="" className="img-fluid" />
                   </div>
                 </Col>
