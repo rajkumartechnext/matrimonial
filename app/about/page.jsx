@@ -72,7 +72,7 @@ function page() {
             <div className="about-story">
               <div className="about-story-image" data-aos="fade-right">
                 <img
-                  src="/images/hero2.jpg"
+                  src="/images/hero1.png"
                   alt="Couple building a meaningful relationship"
                 />
               </div>
@@ -242,7 +242,7 @@ function page() {
                     Create your profile and take the first step toward meeting
                     someone who could become an important part of your life.
                   </p>
-                  <Link href="/register" className="hero-explore-btn mt-4">
+                  <Link href="/" className="hero-explore-btn mt-4">
                     Create Your Profile <UserRound size={16} />
                   </Link>
                 </Col>

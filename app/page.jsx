@@ -100,7 +100,15 @@ function Page() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="/images/hero2.jpg"
+              src="/images/hero2.png"
+              alt="Couple together"
+            />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/hero3.png"
               alt="Couple together"
             />
           </Carousel.Item>
@@ -129,7 +137,7 @@ function Page() {
                   </p>
 
                   <div className="hero-actions">
-                    <Link href="/profiles" className="hero-explore-btn">
+                    <Link href="/about" className="hero-explore-btn">
                       <Search size={18} />
                       Know more
                     </Link>

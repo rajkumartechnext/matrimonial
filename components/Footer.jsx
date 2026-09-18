@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <footer className="matrimonial-footer">
       {/* CTA Section */}
-      <div className="footer-cta">
+      {/* <div className="footer-cta">
         <div className="container-fluid">
           <div className="footer-cta-inner">
             <div className="footer-cta-content">
@@ -48,7 +48,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer */}
       <div className="footer-main">
@@ -58,7 +58,8 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6">
               <div className="footer-brand">
                 <a href="/" className="footer-logo">
-                  <span>Logo Here</span>
+                  {/* <span>Logo Here</span> */}
+                  <img src="images/logo-footer.png" alt="" />
                 </a>
 
                 <p className="footer-description">
@@ -130,13 +131,6 @@ const Footer = () => {
                     <a href="/success-stories">
                       <ChevronRight size={14} />
                       Success Stories
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/premium">
-                      <ChevronRight size={14} />
-                      Membership
                     </a>
                   </li>
                 </ul>
