@@ -935,7 +935,7 @@ a {
 
 .hero-content h1 span {
   display: block;
-  color: #ffffff;
+  color: #ff6b80;
   font-family: "Archivo Black", sans-serif;
   font-size: clamp(52px, 5vw, 76px);
   font-weight: 700;
