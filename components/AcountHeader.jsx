@@ -55,7 +55,8 @@ function AcountHeader() {
       <header className="account-header">
         <div className="account-header-container">
           <Link href="/profile" className="account-logo">
-            <span className="brand-text">Logo Here</span>
+            {/* <span className="brand-text">Logo Here</span> */}
+            <img src="/images/logo.png" alt="" />
           </Link>
 
           <div className="account-header-right">

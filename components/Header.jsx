@@ -295,7 +295,7 @@ function Header() {
         <div className="navbar-brand">
           <Link href="/" className="brand-link" onClick={closeAllMenus}>
             {/* <span className="brand-text">Logo Here</span> */}
-            <img src="images/logo.png" alt="" />
+            <img src="/images/logo.png" alt="" />
           </Link>
         </div>
 
