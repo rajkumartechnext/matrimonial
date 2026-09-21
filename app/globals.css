@@ -926,7 +926,7 @@ a {
 
 .hero-content h1 {
   margin: 0 0 22px;
-  color: #ffffff;
+  color: #ffd661;
   font-size: clamp(42px, 4.2vw, 45px);
   line-height: 1.08;
   font-weight: 500;
